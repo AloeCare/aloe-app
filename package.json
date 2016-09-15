@@ -1,0 +1,11 @@
+{
+  "name": "aloe-app",
+  "version": "1.0.0",
+  "description": "Aloe Website",
+  "main": "app.js",
+  "author": "Linked Ladies",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.0"
+  }
+}

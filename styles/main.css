@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding-top: 80px;
+}
+
+footer.container {
+  padding: 20px 15px 30px;
+}
+
+.navbar {
+  background: white;
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  opacity: 0.95;
+}
+
+.navbar-default .navbar-nav .active a,
+.navbar-default .navbar-nav .active a:focus,
+.navbar-default .navbar-nav .active a:hover {
+  background: none;
+  box-shadow: none;
+  color: black;
+  font-weight: 400;
+}
+
+.navbar-fixed-top .nav {
+  padding: 15px 0;
+}
+
+#clinics {
+  min-height: 500px;
+  text-align: center;
+}
+
+.clinic {
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  color: #333333;
+  margin: 50px 0;
+  padding: 30px;
+}
