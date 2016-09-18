@@ -38,8 +38,9 @@
 
       <div class="container" id="clinics" ng-controller="ClinicsController">
         <div class="row">
-          <div class="col-xs-3">
+          <div class="col-xs-3" ng-if="clinics.length">
             <div class="clinic" ng-repeat="clinic in clinics">
+              <i class="fa fa-trash-o" aria-hidden="true" ng-click="deleteClinic($index, clinic)"></i>
               <h3>{{clinic.name}}</h3>
               <h4>{{clinic.description}}</h4>
             </div>

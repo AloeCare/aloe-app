@@ -30,6 +30,7 @@ footer.container {
 
 #clinics {
   min-height: 500px;
+  opacity: 0;
   text-align: center;
 }
 
@@ -39,4 +40,19 @@ footer.container {
   color: #333333;
   margin: 50px 0;
   padding: 30px;
+  position: relative;
+}
+
+.clinic .fa-trash-o {
+  color: #f05c79;
+  cursor: pointer;
+  display: none;
+  font-size: 20px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.clinic:hover .fa-trash-o {
+  display: block;
 }
