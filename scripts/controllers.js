@@ -1,15 +1,16 @@
 'use strict';
 
-angular.module('aloeApp', [])
-  .controller('ClinicsController', ['$scope', '$http', function($scope, $http) {
+angular.module('aloeApp')
+  .controller('ClinicsController', ['$scope', 'clinicsService', function($scope, clinicsService) {
     $scope.newClinic = {
       name: '',
       description: ''
     };
 
     $scope.fetchClinics = function () {
-      var clinicsResponse = $http.get('http://localhost:8000/clinics');
+      var clinicsResponse = clinicsService.getClinics();
       clinicsResponse.success(function (data, status, headers, config) {
+        console.log('Clinics successfully fetched!');
         $scope.clinics = data;
         $('#clinics').fadeTo('fast', 1);
       });
@@ -19,7 +20,7 @@ angular.module('aloeApp', [])
     }
 
     $scope.addClinic = function () {
-      var clinicsResponse = $http.post('http://localhost:8000/clinics/', $scope.newClinic);
+      var clinicsResponse = clinicsService.addClinic($scope.newClinic);
       clinicsResponse.success(function (data, status, headers, config) {
         console.log('Clinic successfully created!');
         $scope.clinics.push(data.clinic);
@@ -34,7 +35,7 @@ angular.module('aloeApp', [])
     };
 
     $scope.deleteClinic = function ($index, clinic) {
-      var clinicsResponse = $http.delete('http://localhost:8000/clinics/' + clinic.id);
+      var clinicsResponse = clinicsService.deleteClinic(clinic.id);
       clinicsResponse.success(function (data, status, headers, config) {
         console.log('Clinic successfully deleted!');
         $scope.clinics.splice($index, 1);
