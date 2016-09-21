@@ -38,21 +38,39 @@ footer.container {
   border: 1px solid #cccccc;
   border-radius: 3px;
   color: #333333;
-  margin: 50px 0;
+  margin: 50px 0 0;
+  min-height: 150px;
   padding: 30px;
   position: relative;
 }
 
-.clinic .fa-trash-o {
-  color: #f05c79;
+.clinic .fa-trash-o, .clinic .fa-plus {
   cursor: pointer;
   display: none;
   font-size: 20px;
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 10px;
+  top: 10px;
 }
 
-.clinic:hover .fa-trash-o {
+.clinic:hover .fa-trash-o, .clinic:hover .fa-plus {
   display: block;
+}
+
+.clinic .fa-trash-o {
+  color: #f05c79;
+}
+
+.clinic .fa-plus {
+  color: #80b3ff;
+}
+
+#new-clinic {
+  padding: 40px 30px 0;
+}
+
+#new-clinic input {
+  margin-bottom: 5px;
+  padding: 5px;
+  width: 200px;
 }
